@@ -27,14 +27,31 @@ class ShopProvider extends Component {
         this.setState({ checkout: checkout });
       };
 
-    fetchCheckout = async () => {
+      fetchCheckout = async (checkoutId) => {
+        client.checkout
+          .fetch(checkoutId)
+          .then((checkout) => {
+            this.setState({ checkout: checkout });
+          })
+          .catch((error) => console.log(error));
+      };
+    
 
-    }
-
-    addItemCheckout = async () => {
-
-    }
-
+      addItemToCheckout = async (variantId, quantity) => {
+        const lineItemsToAdd = [
+          {
+            variantId,
+            quantity: parseInt(quantity, 10),
+          },
+        ];
+        const checkout = await client.checkout.addLineItems(
+          this.state.checkout.id,
+          lineItemsToAdd
+        );
+        this.setState({ checkout: checkout });
+    
+        this.openCart();
+      };
     removeLineItem = async () => {
 
     }
