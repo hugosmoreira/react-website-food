@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProductPage from './pages/ProductPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Cart from './components/Cart';
+import NavMenu from './components/NavMenu';
 
 
 function App() {
@@ -11,6 +13,8 @@ function App() {
     <div className="App">
      <Router>
        <Navbar />
+       <Cart />
+        <NavMenu />
         <Routes>
           <Route path="/products/:handle" element={<ProductPage />}>          
           </Route>

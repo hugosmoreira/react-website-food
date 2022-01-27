@@ -11,7 +11,7 @@ const Footer = () => {
         <VStack p="2rem">
           <Link to="/">The Green Blast</Link>
           <Link to="/">The Blue Berry</Link>
-          <Link to="/">The Yellow Mellow</Link>
+          
         </VStack>
         <VStack p="2rem">
           <Link to="/">About Us</Link>
